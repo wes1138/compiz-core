@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ -z $1 ]] && ncmds=20 || ncmds=$1
+[[ -z $1 ]] && ncmds=12 || ncmds=$1
 
 cat > ./metadata/commands.xml.in <<EOF
 <compiz>
