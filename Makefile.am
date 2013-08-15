@@ -8,7 +8,8 @@ EXTRA_DIST =		    \
 	compiz.pc.in	    \
 	compiz-cube.pc.in   \
 	compiz-scale.pc.in  \
-	compiz-gconf.pc.in
+	compiz-gconf.pc.in \
+	gen-cmd-metadata.sh
 
 DISTCLEANFILES =	 \
 	po/stamp-it	 \

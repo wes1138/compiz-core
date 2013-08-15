@@ -575,6 +575,11 @@ if test -n "$MAX_DESKTOPS"; then
   AC_DEFINE_UNQUOTED(MAX_DESKTOPS, $MAX_DESKTOPS, [Max reasonable desktops])
 fi
 
+AC_ARG_WITH(num-commands,
+  [  --with-num-commands=num Number of command lines for commands plugin],
+  [NUM_COMMANDS=$withval],
+  [NUM_COMMANDS=12])
+
 AC_CONFIG_COMMANDS([include/compiz-common.h],
 [
 	commonfile=include/compiz-common.h
@@ -612,6 +617,8 @@ _EOF
 	COMPIZ_VERSION_MINOR=$COMPIZ_VERSION_MINOR
 	COMPIZ_VERSION_MICRO=$COMPIZ_VERSION_MICRO
 ])
+
+./gen-cmd-metadata.sh $NUM_COMMANDS
 
 AC_OUTPUT([
 compiz.pc

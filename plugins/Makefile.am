@@ -69,7 +69,7 @@ libobs_la_LDFLAGS = -module -avoid-version -no-undefined
 libobs_la_SOURCES = obs.c
 
 libcommands_la_LDFLAGS = -module -avoid-version -no-undefined
-libcommands_la_SOURCES = commands.c
+libcommands_la_SOURCES = commands.c commands.h
 
 libgnomecompat_la_LDFLAGS = -module -avoid-version -no-undefined
 libgnomecompat_la_SOURCES = gnomecompat.c

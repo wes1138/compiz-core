@@ -12,6 +12,4 @@ intltoolize --copy --force --automake || exit 1
 
 cd $ORIGDIR || exit $?
 
-./gen-cmd-metadata.sh $NUM_COMMANDS
-
 $srcdir/configure --enable-maintainer-mode "$@"
