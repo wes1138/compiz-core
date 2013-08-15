@@ -29,55 +29,7 @@ static CompMetadata commandsMetadata;
 
 static int displayPrivateIndex;
 
-#define COMMANDS_DISPLAY_OPTION_COMMAND0              0
-#define COMMANDS_DISPLAY_OPTION_COMMAND1              1
-#define COMMANDS_DISPLAY_OPTION_COMMAND2              2
-#define COMMANDS_DISPLAY_OPTION_COMMAND3              3
-#define COMMANDS_DISPLAY_OPTION_COMMAND4              4
-#define COMMANDS_DISPLAY_OPTION_COMMAND5              5
-#define COMMANDS_DISPLAY_OPTION_COMMAND6              6
-#define COMMANDS_DISPLAY_OPTION_COMMAND7              7
-#define COMMANDS_DISPLAY_OPTION_COMMAND8              8
-#define COMMANDS_DISPLAY_OPTION_COMMAND9              9
-#define COMMANDS_DISPLAY_OPTION_COMMAND10            10
-#define COMMANDS_DISPLAY_OPTION_COMMAND11            11
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND0_KEY     12
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND1_KEY     13
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND2_KEY     14
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND3_KEY     15
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND4_KEY     16
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND5_KEY     17
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND6_KEY     18
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND7_KEY     19
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND8_KEY     20
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND9_KEY     21
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND10_KEY    22
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND11_KEY    23
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND0_BUTTON  24
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND1_BUTTON  25
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND2_BUTTON  26
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND3_BUTTON  27
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND4_BUTTON  28
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND5_BUTTON  29
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND6_BUTTON  30
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND7_BUTTON  31
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND8_BUTTON  32
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND9_BUTTON  33
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND10_BUTTON 34
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND11_BUTTON 35
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND0_EDGE    36
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND1_EDGE    37
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND2_EDGE    38
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND3_EDGE    39
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND4_EDGE    40
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND5_EDGE    41
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND6_EDGE    42
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND7_EDGE    43
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND8_EDGE    44
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND9_EDGE    45
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND10_EDGE   46
-#define COMMANDS_DISPLAY_OPTION_RUN_COMMAND11_EDGE   47
-#define COMMANDS_DISPLAY_OPTION_NUM                  48
+#include "commands.h"
 
 typedef struct _CommandsDisplay {
     CompOption opt[COMMANDS_DISPLAY_OPTION_NUM];
@@ -115,57 +67,6 @@ runCommandDispatch (CompDisplay     *d,
     return TRUE;
 }
 
-static const CompMetadataOptionInfo commandsDisplayOptionInfo[] = {
-    { "command0", "string", 0, 0, 0 },
-    { "command1", "string", 0, 0, 0 },
-    { "command2", "string", 0, 0, 0 },
-    { "command3", "string", 0, 0, 0 },
-    { "command4", "string", 0, 0, 0 },
-    { "command5", "string", 0, 0, 0 },
-    { "command6", "string", 0, 0, 0 },
-    { "command7", "string", 0, 0, 0 },
-    { "command8", "string", 0, 0, 0 },
-    { "command9", "string", 0, 0, 0 },
-    { "command10", "string", 0, 0, 0 },
-    { "command11", "string", 0, 0, 0 },
-    { "run_command0_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command1_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command2_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command3_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command4_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command5_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command6_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command7_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command8_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command9_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command10_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command11_key", "key", 0, runCommandDispatch, 0 },
-    { "run_command0_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command1_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command2_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command3_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command4_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command5_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command6_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command7_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command8_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command9_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command10_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command11_button", "button", 0, runCommandDispatch, 0 },
-    { "run_command0_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command1_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command2_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command3_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command4_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command5_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command6_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command7_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command8_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command9_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command10_edge", "edge", 0, runCommandDispatch, 0 },
-    { "run_command11_edge", "edge", 0, runCommandDispatch, 0 }
-};
-
 static CompBool
 commandsInitDisplay (CompPlugin  *p,
 		     CompDisplay *d)
@@ -190,7 +91,7 @@ commandsInitDisplay (CompPlugin  *p,
 	return FALSE;
     }
 
-    for (i = 0; i < 12; i++)
+    for (i = 0; i < COMMANDS_NUM_COMMANDS; i++)
     {
 	int opt;
 	
