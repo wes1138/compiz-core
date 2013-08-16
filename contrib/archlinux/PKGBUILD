@@ -1,0 +1,46 @@
+# PKGBUILD for compiz-core.
+# NOTE: the dependencies and configure flags assume you are building
+# compiz as a stand alone window manager.
+
+pkgname='compiz-core'
+pkgver=0.8.9
+pkgrel=2
+pkgdesc="Composite manager for Aiglx and Xgl"
+url="http://www.compiz.org/"
+license=('GPL' 'LGPL' 'MIT')
+arch=('i686' 'x86_64')
+depends=('startup-notification' 'librsvg' 'libgl' 'dbus' 'glu' 'libxslt')
+makedepends=('intltool' 'libwnck' 'startup-notification' \
+	'librsvg' 'libgl' 'dbus' 'glu' 'libxslt')
+options=(!libtool !emptydirs)
+conflicts=('compiz' 'compiz-core-git' 'compiz-git')
+replaces=('compiz')
+source=("compiz-${pkgver}.tar.gz")
+sha1sums=('54bcb4f3dac6eaf85c91578323d694f3bebb74fa')
+
+build()
+{
+  cd "$srcdir/compiz-${pkgver}"
+
+  ./configure   --prefix=/usr \
+	    --disable-gnome \
+	    --enable-gtk \
+	    --disable-metacity \
+	    --disable-inotify \
+	    --disable-fuse \
+	    --disable-dbus \
+	    --disable-gconf \
+	    --enable-librsvg \
+	    --disable-kde \
+	    --disable-kde4 \
+		--with-num-commands=20
+
+  make
+}
+
+package()
+{
+  cd "$srcdir/compiz-${pkgver}"
+  make DESTDIR="$pkgdir" install
+}
+
