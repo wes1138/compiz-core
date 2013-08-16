@@ -50,10 +50,12 @@ the original).
 * glu
 * libxslt
 
-**Note** if you build from a release tarball, then you can avoid gconf, which
-has a lot of dependencies (including gtk3 x_x).
+**Note** if you build from a [release tarball][reltarball], then you can avoid
+gconf, which has a lot of dependencies (including gtk3 x_x).
 
 
 ## Notes
 
 [Original Compiz Readme](./README)
+
+[reltarball]: http://binaryskeith.com/compiz-0.8.9.tar.gz
