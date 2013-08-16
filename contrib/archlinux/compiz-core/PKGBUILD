@@ -15,7 +15,7 @@ makedepends=('intltool' 'libwnck' 'startup-notification' \
 options=(!libtool !emptydirs)
 conflicts=('compiz' 'compiz-core-git' 'compiz-git')
 replaces=('compiz')
-source=("compiz-${pkgver}.tar.gz")
+source=("http://binaryskeith.com/compiz-${pkgver}.tar.gz")
 sha1sums=('54bcb4f3dac6eaf85c91578323d694f3bebb74fa')
 
 build()
