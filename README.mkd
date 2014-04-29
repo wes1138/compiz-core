@@ -7,23 +7,8 @@ Maintenance branch based on compiz 0.8.8.
 ### Modest new features
 
 * Commands plugin: specify an arbitrary number of command shortcuts (at build
-  time :\ )
+  time)
 * Build scripts / instructions for BLFS and Arch Linux
-
-### Rationale / rant about this branch
-
-Recently one of my distributions of choice (Arch Linux) dropped Compiz,
-claiming that the bits were somehow rotting, and that such window managers are
-altogether passé.
-
-I don't think either point is a justified criticism of Compiz.  First, note
-that there are some recent commits to the 0.8.x line to backport bug fixes.
-Second, note that Compiz has many great plugins which focus solely on
-**usability**.  I've yet to find an adequate substitute.  When configured
-properly, Compiz gives you a window manager that's simple, flexible, and
-light-weight.  (And yeah, you can make your windows wobble and a rotating
-aquarium appear behind your desktop if you're into that sort of thing.
-Looking at you, Xzibit...)
 
 
 ## Building
